@@ -1,0 +1,433 @@
+/*==================================================
+                GOOGLE FONT
+==================================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/*==================================================
+                GLOBAL
+==================================================*/
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:linear-gradient(135deg,#eef4ff,#f7fbff,#edf6ff);
+
+    color:#1E293B;
+
+}
+
+/*==================================================
+                MAIN CARD
+==================================================*/
+
+.card-body{
+
+    max-width:900px;
+
+    margin:40px auto;
+
+    background:#fff;
+
+    padding:40px;
+
+    border-radius:25px;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.08);
+
+    position:relative;
+
+    overflow:hidden;
+
+    transition:.4s;
+
+}
+
+.card-body:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 30px 60px rgba(79,70,229,.15);
+
+}
+
+/*==================================================
+                SHINE EFFECT
+==================================================*/
+
+.card-body::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-140%;
+
+    width:60%;
+
+    height:100%;
+
+    background:linear-gradient(
+
+        120deg,
+
+        transparent,
+
+        rgba(255,255,255,.5),
+
+        transparent
+
+    );
+
+    transform:skewX(-25deg);
+
+    animation:shine 6s infinite;
+
+}
+
+@keyframes shine{
+
+    100%{
+
+        left:180%;
+
+    }
+
+}
+
+/*==================================================
+                SECTION TITLE
+==================================================*/
+
+h5{
+
+    font-weight:700;
+
+    color:#4F46E5;
+
+    margin-top:25px;
+
+    margin-bottom:20px;
+
+}
+
+h6{
+
+    font-weight:600;
+
+    color:#334155;
+
+}
+
+/*==================================================
+                ICONS
+==================================================*/
+
+h5 i{
+
+    color:#6366F1;
+
+}
+
+/*==================================================
+                LABELS
+==================================================*/
+
+.form-label{
+
+    font-weight:600;
+
+    color:#475569;
+
+}
+
+/*==================================================
+                INPUTS
+==================================================*/
+
+.form-control,
+
+.form-select{
+
+    border-radius:14px;
+
+    border:2px solid #E2E8F0;
+
+    height:52px;
+
+    transition:.3s;
+
+    box-shadow:none;
+
+}
+
+.form-control:focus,
+
+.form-select:focus{
+
+    border-color:#6366F1;
+
+    box-shadow:0 0 0 4px rgba(99,102,241,.15);
+
+}
+
+/*==================================================
+                SWITCHES
+==================================================*/
+
+.form-check{
+
+    background:#F8FAFC;
+
+    padding:15px 18px;
+
+    border-radius:14px;
+
+    margin-bottom:15px;
+
+    transition:.3s;
+
+}
+
+.form-check:hover{
+
+    background:#EEF2FF;
+
+    transform:translateX(5px);
+
+}
+
+.form-check-input{
+
+    cursor:pointer;
+
+    width:48px;
+
+    height:24px;
+
+}
+
+.form-check-input:checked{
+
+    background-color:#4F46E5;
+
+    border-color:#4F46E5;
+
+}
+
+.form-check-label{
+
+    font-weight:500;
+
+    margin-left:10px;
+
+}
+
+/*==================================================
+                BUTTONS
+==================================================*/
+
+.btn{
+
+    border:none;
+
+    border-radius:14px;
+
+    padding:12px 28px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.btn-success{
+
+    background:linear-gradient(135deg,#10B981,#34D399);
+
+}
+
+.btn-success:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 15px 30px rgba(16,185,129,.35);
+
+}
+
+.btn-danger{
+
+    background:linear-gradient(135deg,#EF4444,#DC2626);
+
+}
+
+.btn-danger:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 15px 30px rgba(239,68,68,.35);
+
+}
+
+.btn-primary{
+
+    background:linear-gradient(135deg,#4F46E5,#7C3AED);
+
+}
+
+.btn-primary:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 15px 30px rgba(79,70,229,.35);
+
+}
+
+/*==================================================
+                HR
+==================================================*/
+
+hr{
+
+    border-top:2px dashed #CBD5E1;
+
+    margin:35px 0;
+
+}
+
+/*==================================================
+                DARK MODE
+==================================================*/
+
+body.dark-mode{
+
+    background:#0F172A;
+
+    color:white;
+
+}
+
+body.dark-mode .card-body{
+
+    background:#1E293B;
+
+    color:white;
+
+}
+
+body.dark-mode .form-control,
+
+body.dark-mode .form-select{
+
+    background:#334155;
+
+    color:white;
+
+    border-color:#475569;
+
+}
+
+body.dark-mode .form-check{
+
+    background:#334155;
+
+}
+
+body.dark-mode h5{
+
+    color:#A5B4FC;
+
+}
+
+body.dark-mode h6,
+
+body.dark-mode .form-label{
+
+    color:white;
+
+}
+
+/*==================================================
+                ANIMATION
+==================================================*/
+
+.card-body{
+
+    animation:fade .7s ease;
+
+}
+
+@keyframes fade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/*==================================================
+                SCROLLBAR
+==================================================*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:linear-gradient(#4F46E5,#7C3AED);
+
+    border-radius:30px;
+
+}
+
+/*==================================================
+                RESPONSIVE
+==================================================*/
+
+@media(max-width:768px){
+
+    .card-body{
+
+        margin:20px;
+
+        padding:25px;
+
+    }
+
+    .btn{
+
+        width:100%;
+
+        margin-bottom:12px;
+
+    }
+
+}

@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>
+Settings | Hostel Exit Management System
+</title>
+
+
+<!-- Bootstrap -->
+
+<link 
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+rel="stylesheet">
+
+
+<!-- Font Awesome -->
+
+<link 
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="settingstyle.css">
+<style>
+
+
+body.dark-mode{
+
+    background:#111827 !important;
+    color:white;
+
+}
+
+
+.dark-mode .card{
+
+    background:#1f2937;
+    color:white;
+
+}
+
+
+.settings-card{
+
+    border-radius:15px;
+
+}
+
+
+.sidebar a{
+
+    transition:.3s;
+
+}
+
+
+.sidebar a:hover{
+
+    background:rgba(255,255,255,.15);
+
+    border-radius:10px;
+
+}
+
+
+
+</style>
+
+
+</head>
+
+
+
+<body class="bg-light">
+
+
+
+<div class="container-fluid">
+
+
+<div class="row">
+
+
+
+
+
+
+<!-- ================= MAIN CONTENT ================= -->
+
+<div class="card-body">
+
+
+<!-- ACCOUNT SETTINGS -->
+
+<h5 class="mb-3">
+    <i class="fa-solid fa-user me-2"></i>
+    Account Settings
+</h5>
+
+
+<div class="mb-3">
+
+<label class="form-label">
+    Full Name
+</label>
+
+<input type="text"
+class="form-control"
+id="userName"
+value="Aviral Dixit">
+
+</div>
+
+
+
+
+<div class="mb-3">
+
+<label class="form-label">
+    Email Address
+</label>
+
+<input type="email"
+class="form-control"
+id="email"
+value="aviral@gmail.com">
+
+</div>
+
+
+
+
+
+<hr>
+
+
+
+
+
+<!-- NOTIFICATIONS -->
+
+<h5 class="mb-3">
+
+<i class="fa-solid fa-bell me-2"></i>
+
+Notifications
+
+</h5>
+
+
+
+<div class="form-check form-switch mb-3">
+
+<input class="form-check-input"
+type="checkbox"
+id="emailNotification"
+checked>
+
+<label class="form-check-label">
+
+Email Notifications
+
+</label>
+
+</div>
+
+
+
+
+
+<div class="form-check form-switch mb-3">
+
+<input class="form-check-input"
+type="checkbox"
+id="smsNotification"
+checked>
+
+<label class="form-check-label">
+
+SMS Alerts
+
+</label>
+
+</div>
+
+
+
+
+
+
+<div class="form-check form-switch mb-3">
+
+<input class="form-check-input"
+type="checkbox"
+id="approvalNotification"
+checked>
+
+<label class="form-check-label">
+
+Gate Pass Approval Alerts
+
+</label>
+
+</div>
+
+
+
+
+
+
+
+<hr>
+
+
+
+
+
+
+
+<!-- APPEARANCE -->
+
+<h5 class="mb-3">
+
+<i class="fa-solid fa-palette me-2"></i>
+
+Appearance
+
+</h5>
+
+
+
+
+<div class="mb-3">
+
+<label class="form-label">
+
+Theme
+
+</label>
+
+
+<select class="form-select"
+id="theme">
+
+
+<option>
+Light
+</option>
+
+
+<option>
+Dark
+</option>
+
+
+</select>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="mb-3">
+
+<label class="form-label">
+
+Language
+
+</label>
+
+
+<select class="form-select">
+
+
+<option>
+English
+</option>
+
+
+<option>
+Hindi
+</option>
+
+
+</select>
+
+
+</div>
+
+
+
+
+
+
+
+<hr>
+
+
+
+
+
+
+
+<!-- SECURITY -->
+
+<h5 class="mb-3">
+
+<i class="fa-solid fa-lock me-2"></i>
+
+Security
+
+</h5>
+
+
+
+
+
+<div class="mb-3">
+
+
+<label class="form-label">
+
+Current Password
+
+</label>
+
+
+<input type="password"
+class="form-control"
+placeholder="Current Password">
+
+
+</div>
+
+
+
+
+
+<div class="mb-3">
+
+
+<label class="form-label">
+
+New Password
+
+</label>
+
+
+<input type="password"
+class="form-control"
+placeholder="New Password">
+
+
+</div>
+
+
+
+
+
+
+<div class="form-check form-switch mb-3">
+
+
+<input class="form-check-input"
+type="checkbox">
+
+
+<label class="form-check-label">
+
+Enable Two Factor Authentication
+
+</label>
+
+
+</div>
+
+
+
+
+
+
+
+
+<hr>
+
+
+
+
+
+
+
+<!-- PRIVACY -->
+
+<h5 class="mb-3">
+
+<i class="fa-solid fa-shield-halved me-2"></i>
+
+Privacy
+
+</h5>
+
+
+
+
+
+
+<div class="form-check form-switch mb-3">
+
+
+<input class="form-check-input"
+type="checkbox"
+checked>
+
+
+<label class="form-check-label">
+
+Show Profile To Hostel Admin
+
+</label>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="form-check form-switch mb-3">
+
+
+<input class="form-check-input"
+type="checkbox"
+checked>
+
+
+<label class="form-check-label">
+
+Allow Location Access During Gate Exit
+
+</label>
+
+
+</div>
+
+
+
+
+
+
+
+<hr>
+
+
+
+
+
+
+
+<!-- GATE PASS SETTINGS -->
+
+
+<h5 class="mb-3">
+
+<i class="fa-solid fa-id-card me-2"></i>
+
+Gate Pass Preferences
+
+</h5>
+
+
+
+
+
+<div class="mb-3">
+
+
+<label class="form-label">
+
+Auto Logout Time
+
+</label>
+
+
+
+<select class="form-select">
+
+
+<option>
+15 Minutes
+</option>
+
+
+<option>
+30 Minutes
+</option>
+
+
+<option>
+1 Hour
+</option>
+
+
+</select>
+
+
+
+</div>
+
+
+
+
+
+
+<div class="form-check form-switch mb-3">
+
+
+<input class="form-check-input"
+type="checkbox"
+checked>
+
+
+<label class="form-check-label">
+
+Remember Last Gate Pass Details
+
+</label>
+
+
+</div>
+
+
+
+
+
+
+
+
+<hr>
+
+
+
+
+
+
+
+<!-- ACTION BUTTONS -->
+
+
+<div class="d-flex gap-3">
+
+
+<button class="btn btn-success">
+
+
+<i class="fa-solid fa-save me-2"></i>
+
+Save Changes
+
+
+</button>
+
+
+
+
+
+<button class="btn btn-danger">
+
+
+<i class="fa-solid fa-trash me-2"></i>
+
+Reset Settings
+
+
+</button>
+
+
+
+</div>
+
+
+
+</div>
+
+
+<!-- Notification -->
+
+
+<div class="mb-4">
+
+
+<h6>
+
+Notifications
+
+</h6>
+
+
+<div class="form-check form-switch">
+
+
+<input class="form-check-input"
+type="checkbox"
+id="notification">
+
+
+<label class="form-check-label">
+
+Receive Notifications
+
+</label>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- Password -->
+
+
+<div class="mb-4">
+
+
+<h6>
+
+Change Password
+
+</h6>
+
+
+
+<input type="password"
+id="password"
+class="form-control mb-2"
+placeholder="Enter New Password">
+
+
+
+<button class="btn btn-primary"
+onclick="changePassword()">
+
+Save Password
+
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+
+<!-- Save -->
+
+
+<button class="btn btn-success"
+onclick="saveSettings()">
+
+
+<i class="fa-solid fa-save me-2"></i>
+
+Save Settings
+
+
+</button>
+
+
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

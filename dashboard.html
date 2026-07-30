@@ -1,0 +1,2070 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Character Encoding -->
+    <meta charset="UTF-8">
+
+    <!-- Responsive Website -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page Title -->
+    <title>Student Dashboard | Hostel Exit Management System</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="dashboardstyle.css">
+
+</head>
+
+<body>
+
+<!-- ============================= -->
+<!-- Main Wrapper Starts Here -->
+<!-- ============================= -->
+
+<div class="container-fluid">
+
+    <div class="row">
+
+<!-- ================= SIDEBAR MENU ================= -->
+
+<!-- Menu Button -->
+
+<button class="btn btn-dark d-flex align-items-center gap-2 m-3 px-3 py-2"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#sidebar">
+
+    <i class="fa-solid fa-bars"></i>
+    <span>Menu</span>
+
+</button>
+
+
+
+<!-- Sidebar -->
+
+<div class="offcanvas offcanvas-start"
+     tabindex="-1"
+     id="sidebar">
+
+
+    <!-- Header -->
+
+    <div class="offcanvas-header bg-dark text-white px-4">
+
+        <h5 class="offcanvas-title d-flex align-items-center gap-2">
+            <i class="fa-solid fa-building"></i>
+            MPGI
+        </h5>
+
+
+        <button type="button"
+                class="btn-close btn-close-white"
+                data-bs-dismiss="offcanvas">
+        </button>
+
+    </div>
+
+
+
+
+    <!-- Body -->
+
+    <div class="offcanvas-body p-4">
+
+
+
+        <!-- Logo Section -->
+
+        <div class="text-center pb-4 border-bottom">
+
+            <img id="mpgi" src="Screenshot 2026-07-29 053337.png"
+                 width="500"
+                 class="mb-3">
+
+            <h4 class="fw-bold fs-5 mb-0">
+                Hostel Exit Management
+            </h4>
+
+        </div>
+
+
+
+
+
+        <!-- Student Profile -->
+
+        <div class="text-center py-4 border-bottom">
+
+
+            <img src="IMG-20260211-WA0001.jpg"
+                 width="250"
+                 height="100"
+                 class="rounded-circle shadow-sm">
+
+
+            <h5 class="mt-3 mb-1 fw-semibold">
+                Aviral Dixit
+            </h5>
+
+
+            <span class="badge bg-success px-3 py-2">
+                Online
+            </span>
+
+
+        </div>
+
+
+
+
+
+
+
+        <!-- Menu Links -->
+
+        <div class="list-group mt-4 gap-2">
+
+
+            <a href="dashboard.html"
+               class="list-group-item list-group-item-action rounded">
+
+                <i class="fa-solid fa-house me-2"></i>
+                Dashboard
+
+            </a>
+
+
+
+            <a href="apply-pass.html"
+               class="list-group-item list-group-item-action rounded">
+
+                <i class="fa-solid fa-file-circle-plus me-2"></i>
+                Apply Gate Pass
+
+            </a>
+
+
+
+
+            <a href="my-passes.html"
+               class="list-group-item list-group-item-action rounded">
+
+                <i class="fa-solid fa-list me-2"></i>
+                My Applications
+
+            </a>
+
+            <a href="view-pass.html"
+               class="list-group-item list-group-item-action rounded">
+
+                <i class="fa-solid fa-eye"></i>
+
+                View Pass
+
+            </a>
+
+
+            <a href="qr.html"
+               class="list-group-item list-group-item-action rounded">
+
+                <i class="fa-solid fa-qrcode me-2"></i>
+                My QR Pass
+
+            </a>
+
+
+
+
+            <a href="history.html"
+               class="list-group-item list-group-item-action rounded">
+
+                <i class="fa-solid fa-clock me-2"></i>
+                Leave History
+
+            </a>
+
+
+
+
+            <a href="profile.html"
+               class="list-group-item list-group-item-action rounded">
+
+                <i class="fa-solid fa-user me-2"></i>
+                Profile
+
+            </a>
+
+
+
+
+            <a href="settings.html"
+               class="list-group-item list-group-item-action rounded">
+
+                <i class="fa-solid fa-gear me-2"></i>
+                Settings
+
+            </a>
+
+
+
+
+            <a href="logout.html"
+               class="list-group-item list-group-item-action rounded text-danger">
+
+                <i class="fa-solid fa-right-from-bracket me-2"></i>
+                Logout
+
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- ================= TOP NAVBAR ================= -->
+
+
+<nav class="navbar bg-white shadow-sm px-4 py-3">
+
+
+<div class="container-fluid d-flex justify-content-between align-items-center">
+
+
+
+    <!-- Page Title -->
+
+    <h4 class="fw-bold mb-0">
+        Student Dashboard
+    </h4>
+
+
+
+
+
+    <!-- Right Actions -->
+
+    <div class="d-flex align-items-center gap-3">
+
+
+
+        <!-- Theme -->
+
+        <button class="btn btn-light rounded-circle">
+
+            <i class="fa-solid fa-moon"></i>
+
+        </button>
+
+
+
+
+
+        <!-- Notification -->
+
+        <button class="btn btn-light rounded-circle position-relative">
+
+            <i class="fa-solid fa-bell"></i>
+
+
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+
+                
+
+            </span>
+
+
+        </button>
+
+
+
+
+
+
+        <!-- Profile Dropdown -->
+
+
+        <div class="dropdown">
+
+
+            <button class="btn btn-light dropdown-toggle d-flex align-items-center gap-2"
+                    data-bs-toggle="dropdown">
+
+
+                <img src="IMG-20260211-WA0001.jpg"
+                     width="35"
+                     height="35"
+                     class="rounded-circle">
+
+
+                <span>
+                    Aviral
+                </span>
+
+
+            </button>
+
+
+
+
+            <ul class="dropdown-menu dropdown-menu-end shadow">
+
+
+                <li>
+
+                    <a href="profile.html"
+                       class="dropdown-item py-2">
+
+                        <i class="fa-solid fa-user me-2"></i>
+                        Profile
+
+                    </a>
+
+                </li>
+
+
+
+                <li>
+
+                    <a href="settings.html"
+                       class="dropdown-item py-2">
+
+                        <i class="fa-solid fa-gear me-2"></i>
+                        Settings
+
+                    </a>
+
+                </li>
+
+
+
+
+                <li>
+
+                    <hr class="dropdown-divider">
+
+                </li>
+
+
+
+
+                <li>
+
+                    <a href="logout.html"
+                       class="dropdown-item text-danger py-2">
+
+
+                        <i class="fa-solid fa-right-from-bracket me-2"></i>
+                        Logout
+
+
+                    </a>
+
+
+                </li>
+
+
+            </ul>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+</nav>
+
+    <!-- ========================= -->
+    <!-- PAGE CONTENT STARTS -->
+    <!-- ========================= -->
+
+    <div class="container-fluid mt-4">
+
+        <!-- Welcome Banner will come here -->
+
+    </div>
+
+</div>
+
+<!-- =========================================== -->
+<!-- MAIN CONTENT END -->
+<!-- =========================================== -->
+
+
+        <!-- Main Content Ends -->
+         <!-- ========================================== -->
+<!-- WELCOME SECTION START -->
+<!-- ========================================== -->
+
+<div class="row">
+
+    <div class="col-lg-12">
+
+        <div class="card border-0 shadow-lg rounded-4">
+
+            <div class="card-body p-5">
+
+                <div class="row align-items-center">
+
+                    <!-- Left Side -->
+
+                    <div class="col-lg-8">
+
+                        <h2 class="fw-bold">
+
+                            👋 Welcome Back,
+                            <span class="text-primary">
+
+                                Aviral Dixit
+
+                            </span>
+
+                        </h2>
+
+                        <p class="text-muted mt-3">
+
+                            Welcome to the Hostel Exit Management System.
+                            You can apply for gate passes, view your
+                            application history, download QR passes,
+                            receive notifications and manage your hostel
+                            activities from one place.
+
+                        </p>
+
+                        <div class="mt-4">
+
+                            <a href="apply-pass.html"
+                                class="btn btn-primary me-3">
+
+                                <i class="fa-solid fa-file-circle-plus"></i>
+
+                                Apply Gate Pass
+
+                            </a>
+
+                            <a href="my-passes.html"
+                                class="btn btn-outline-primary">
+
+                                <i class="fa-solid fa-list"></i>
+
+                                My Applications
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    
+
+                  
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ========================================== -->
+<!-- STUDENT INFORMATION -->
+<!-- ========================================== -->
+
+<div class="row mt-4">
+
+    <div class="col-lg-3">
+
+        <div class="card shadow border-0">
+
+            <div class="card-body">
+
+                <h6 class="text-muted">
+
+                    Student Name
+
+                </h6>
+
+                <h5>
+
+                    Aviral Dixit
+
+                </h5>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-lg-3">
+
+        <div class="card shadow border-0">
+
+            <div class="card-body">
+
+                <h6 class="text-muted">
+
+                    Hostel
+
+                </h6>
+
+                <h5>
+
+                    Boys Hostel A
+
+                </h5>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-lg-3">
+
+        <div class="card shadow border-0">
+
+            <div class="card-body">
+
+                <h6 class="text-muted">
+
+                    Room Number
+
+                </h6>
+
+                <h5>
+
+                    A-204
+
+                </h5>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-lg-3">
+
+        <div class="card shadow border-0">
+
+            <div class="card-body">
+
+                <h6 class="text-muted">
+
+                    Current Status
+
+                </h6>
+
+                <span class="badge bg-success fs-6">
+
+                    Inside Hostel
+
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ========================================== -->
+<!-- ANNOUNCEMENT -->
+<!-- ========================================== -->
+
+<div class="row mt-4">
+
+    <div class="col-lg-12">
+
+        <div class="alert alert-warning d-flex align-items-center">
+
+            <i class="fa-solid fa-bullhorn fs-3 me-3"></i>
+
+            <div>
+
+                <strong>
+
+                    Notice
+
+                </strong>
+
+                <br>
+
+                Gate Pass requests submitted after
+                <b>8:00 PM</b>
+                will be processed the next day.
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ========================================== -->
+<!-- DATE & TIME -->
+<!-- ========================================== -->
+
+<div class="row mt-4">
+
+    <div class="col-lg-6">
+
+        <div class="card shadow border-0">
+
+            <div class="card-body">
+
+                <h5>
+
+                    <i class="fa-solid fa-calendar-days text-primary"></i>
+
+                    Today's Date
+
+                </h5>
+
+                <h3>
+
+                    29 July 2026
+
+                </h3>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-lg-6">
+
+        <div class="card shadow border-0">
+
+            <div class="card-body">
+
+                <h5>
+
+                    <i class="fa-solid fa-clock text-success"></i>
+
+                    Current Time
+
+                </h5>
+
+                <h3 id="clock">
+
+                    10:30 AM
+
+                </h3>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+  </div>
+
+</div>
+<div class="live-clock">
+
+    <i class="fa-solid fa-calendar-days"></i>
+
+    <span id="liveDate"></span>
+
+    |
+
+    <i class="fa-solid fa-clock"></i>
+
+    <span id="liveTime"></span>
+
+</div>
+<!-- ========================================== -->
+<!-- WELCOME SECTION END -->
+<!-- ========================================== -->
+
+  
+<!-- ========================================= -->
+<!-- DASHBOARD STATISTICS START -->
+<!-- ========================================= -->
+
+<div class="row mt-4">
+
+    <!-- Total Applications -->
+
+    <div class="col-xl-4 col-lg-6 mb-4">
+
+        <div class="card border-0 shadow h-100">
+
+            <div class="card-body">
+
+                <div class="d-flex justify-content-between align-items-center">
+
+                    <div>
+
+                        <h6 class="text-muted">
+
+                            Total Applications
+
+                        </h6>
+
+                        <h2 class="fw-bold mt-3">
+
+                            25
+
+                        </h2>
+
+                        <small class="text-success">
+
+                            +5 This Month
+
+                        </small>
+
+                    </div>
+
+                    <div>
+
+                        <div class="bg-primary rounded-circle d-flex justify-content-center align-items-center"
+                            style="width:70px;height:70px;">
+
+                            <i class="fa-solid fa-file-circle-check text-white fs-2"></i>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Pending -->
+
+    <div class="col-xl-4 col-lg-6 mb-4">
+
+        <div class="card border-0 shadow h-100">
+
+            <div class="card-body">
+
+                <div class="d-flex justify-content-between align-items-center">
+
+                    <div>
+
+                        <h6 class="text-muted">
+
+                            Pending Requests
+
+                        </h6>
+
+                        <h2 class="fw-bold mt-3 text-warning">
+
+                            4
+
+                        </h2>
+
+                        <small>
+
+                            Waiting For Approval
+
+                        </small>
+
+                    </div>
+
+                    <div>
+
+                        <div class="bg-warning rounded-circle d-flex justify-content-center align-items-center"
+                            style="width:70px;height:70px;">
+
+                            <i class="fa-solid fa-hourglass-half text-white fs-2"></i>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Approved -->
+
+    <div class="col-xl-4 col-lg-6 mb-4">
+
+        <div class="card border-0 shadow h-100">
+
+            <div class="card-body">
+
+                <div class="d-flex justify-content-between align-items-center">
+
+                    <div>
+
+                        <h6 class="text-muted">
+
+                            Approved Passes
+
+                        </h6>
+
+                        <h2 class="fw-bold mt-3 text-success">
+
+                            18
+
+                        </h2>
+
+                        <small>
+
+                            Successfully Approved
+
+                        </small>
+
+                    </div>
+
+                    <div>
+
+                        <div class="bg-success rounded-circle d-flex justify-content-center align-items-center"
+                            style="width:70px;height:70px;">
+
+                            <i class="fa-solid fa-circle-check text-white fs-2"></i>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- SECOND ROW -->
+
+<div class="row">
+
+    <!-- Rejected -->
+
+    <div class="col-xl-4 col-lg-6 mb-4">
+
+        <div class="card border-0 shadow h-100">
+
+            <div class="card-body">
+
+                <div class="d-flex justify-content-between align-items-center">
+
+                    <div>
+
+                        <h6 class="text-muted">
+
+                            Rejected Passes
+
+                        </h6>
+
+                        <h2 class="fw-bold mt-3 text-danger">
+
+                            3
+
+                        </h2>
+
+                        <small>
+
+                            Need Correction
+
+                        </small>
+
+                    </div>
+
+                    <div>
+
+                        <div class="bg-danger rounded-circle d-flex justify-content-center align-items-center"
+                            style="width:70px;height:70px;">
+
+                            <i class="fa-solid fa-circle-xmark text-white fs-2"></i>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Today's Exit -->
+
+    <div class="col-xl-4 col-lg-6 mb-4">
+
+        <div class="card border-0 shadow h-100">
+
+            <div class="card-body">
+
+                <div class="d-flex justify-content-between align-items-center">
+
+                    <div>
+
+                        <h6 class="text-muted">
+
+                            Today's Exit
+
+                        </h6>
+
+                        <h2 class="fw-bold mt-3">
+
+                            02
+
+                        </h2>
+
+                        <small class="text-primary">
+
+                            Active Today
+
+                        </small>
+
+                    </div>
+
+                    <div>
+
+                        <div class="bg-info rounded-circle d-flex justify-content-center align-items-center"
+                            style="width:70px;height:70px;">
+
+                            <i class="fa-solid fa-arrow-right-from-bracket text-white fs-2"></i>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Today's Entry -->
+
+    <div class="col-xl-4 col-lg-6 mb-4">
+
+        <div class="card border-0 shadow h-100">
+
+            <div class="card-body">
+
+                <div class="d-flex justify-content-between align-items-center">
+
+                    <div>
+
+                        <h6 class="text-muted">
+
+                            Today's Entry
+
+                        </h6>
+
+                        <h2 class="fw-bold mt-3">
+
+                            01
+
+                        </h2>
+
+                        <small class="text-success">
+
+                            Returned Students
+
+                        </small>
+
+                    </div>
+
+                    <div>
+
+                        <div class="bg-secondary rounded-circle d-flex justify-content-center align-items-center"
+                            style="width:70px;height:70px;">
+
+                            <i class="fa-solid fa-arrow-right-to-bracket text-white fs-2"></i>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ========================================= -->
+<!-- DASHBOARD STATISTICS END -->
+ <!-- ================================================= -->
+<!-- RECENT GATE PASS APPLICATIONS START -->
+<!-- ================================================= -->
+
+<div class="row mt-4">
+
+    <div class="col-lg-12">
+
+        <div class="card shadow border-0">
+
+            <!-- Card Header -->
+
+            <div class="card-header bg-white">
+
+                <div class="row align-items-center">
+
+                    <div class="col-lg-6">
+
+                        <h4 class="fw-bold mb-0">
+
+                            Recent Gate Pass Applications
+
+                        </h4>
+
+                    </div>
+
+                    <div class="col-lg-6 text-end">
+
+                        <button class="btn btn-primary">
+
+                            <i class="fa-solid fa-file-circle-plus"></i>
+
+                            New Application
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Card Body -->
+
+            <div class="card-body">
+
+                <!-- Search & Filter -->
+
+                <div class="row mb-4">
+
+                    <div class="col-lg-4">
+
+                        <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Search Application">
+
+                    </div>
+
+                    <div class="col-lg-3">
+
+                        <select class="form-select">
+
+                            <option>All Status</option>
+
+                            <option>Pending</option>
+
+                            <option>Approved</option>
+
+                            <option>Rejected</option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="col-lg-3">
+
+                        <input
+                            type="date"
+                            class="form-control">
+
+                    </div>
+
+                    <div class="col-lg-2">
+
+                        <button class="btn btn-success w-100">
+
+                            Filter
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- Responsive Table -->
+
+                <div class="table-responsive">
+
+                    <table class="table table-hover table-bordered align-middle">
+
+                        <thead class="table-dark">
+
+                            <tr>
+
+                                <th>#</th>
+
+                                <th>Application ID</th>
+
+                                <th>Reason</th>
+
+                                <th>Destination</th>
+
+                                <th>Leaving Date</th>
+
+                                <th>Return Date</th>
+
+                                <th>Status</th>
+
+                                <th>QR</th>
+
+                                <th>Action</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>1</td>
+
+                                <td>GP1001</td>
+
+                                <td>Medical</td>
+
+                                <td>City Hospital</td>
+
+                                <td>30 Jul 2026</td>
+
+                                <td>30 Jul 2026</td>
+
+                                <td>
+
+                                    <span class="badge bg-success">
+
+                                        Approved
+
+                                    </span>
+
+                                </td>
+
+                                <td>
+
+                                    <i class="fa-solid fa-qrcode fs-4 text-primary"></i>
+
+                                </td>
+
+                                <td>
+
+                                    <a href="view-pass.html"
+
+                                            class="btn btn-sm btn-info">
+
+                                    <i class="fa-solid fa-eye"></i>
+
+                                    </a>
+
+                                    <button class="btn btn-sm btn-success">
+
+                                        <i class="fa-solid fa-download"></i>
+
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>2</td>
+
+                                <td>GP1002</td>
+
+                                <td>Family Function</td>
+
+                                <td>Lucknow</td>
+
+                                <td>31 Jul 2026</td>
+
+                                <td>02 Aug 2026</td>
+
+                                <td>
+
+                                    <span class="badge bg-warning text-dark">
+
+                                        Pending
+
+                                    </span>
+
+                                </td>
+
+                                <td>
+
+                                    -
+
+                                </td>
+
+                                <td>
+
+                                    <button class="btn btn-sm btn-secondary">
+
+                                        <i class="fa-solid fa-eye"></i>
+
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>3</td>
+
+                                <td>GP1003</td>
+
+                                <td>Personal Work</td>
+
+                                <td>Kanpur</td>
+
+                                <td>26 Jul 2026</td>
+
+                                <td>26 Jul 2026</td>
+
+                                <td>
+
+                                    <span class="badge bg-danger">
+
+                                        Rejected
+
+                                    </span>
+
+                                </td>
+
+                                <td>
+
+                                    -
+
+                                </td>
+
+                                <td>
+
+                                    <button class="btn btn-sm btn-danger">
+
+                                        <i class="fa-solid fa-eye"></i>
+
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <!-- Pagination -->
+
+                <nav class="mt-3">
+
+                    <ul class="pagination justify-content-end">
+
+                        <li class="page-item disabled">
+
+                            <a class="page-link">
+
+                                Previous
+
+                            </a>
+
+                        </li>
+
+                        <li class="page-item active">
+
+                            <a class="page-link">
+
+                                1
+
+                            </a>
+
+                        </li>
+
+                        <li class="page-item">
+
+                            <a class="page-link">
+
+                                2
+
+                            </a>
+
+                        </li>
+
+                        <li class="page-item">
+
+                            <a class="page-link">
+
+                                3
+
+                            </a>
+
+                        </li>
+
+                        <li class="page-item">
+
+                            <a class="page-link">
+
+                                Next
+
+                            </a>
+
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================================================= -->
+<!-- RECENT GATE PASS APPLICATIONS END -->
+<!-- ================================================= -->
+ <!-- ================================================= -->
+<!-- DASHBOARD WIDGETS START -->
+<!-- ================================================= -->
+
+<div class="row mt-4">
+
+    <!-- Latest Notifications -->
+
+    <div class="col-lg-4 mb-4">
+
+        <div class="card shadow border-0 h-100">
+
+            <div class="card-header bg-primary text-white">
+
+                <h5 class="mb-0">
+
+                    <i class="fa-solid fa-bell me-2"></i>
+
+                    Latest Notifications
+
+                </h5>
+
+            </div>
+
+            <div class="card-body">
+
+                <div class="d-flex mb-4">
+
+                    <div class="me-3">
+
+                        <div class="bg-success rounded-circle p-3">
+
+                            <i class="fa-solid fa-check text-white"></i>
+
+                        </div>
+
+                    </div>
+
+                    <div>
+
+                        <h6 class="mb-1">
+
+                            Gate Pass Approved
+
+                        </h6>
+
+                        <small class="text-muted">
+
+                            Your medical gate pass has been approved.
+
+                        </small>
+
+                    </div>
+
+                </div>
+
+                <div class="d-flex mb-4">
+
+                    <div class="me-3">
+
+                        <div class="bg-warning rounded-circle p-3">
+
+                            <i class="fa-solid fa-clock text-white"></i>
+
+                        </div>
+
+                    </div>
+
+                    <div>
+
+                        <h6 class="mb-1">
+
+                            Pending Request
+
+                        </h6>
+
+                        <small class="text-muted">
+
+                            Waiting for coordinator approval.
+
+                        </small>
+
+                    </div>
+
+                </div>
+
+                <div class="d-flex">
+
+                    <div class="me-3">
+
+                        <div class="bg-danger rounded-circle p-3">
+
+                            <i class="fa-solid fa-bullhorn text-white"></i>
+
+                        </div>
+
+                    </div>
+
+                    <div>
+
+                        <h6 class="mb-1">
+
+                            Hostel Notice
+
+                        </h6>
+
+                        <small class="text-muted">
+
+                            Hostel gate closes at 10:00 PM.
+
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Warden Information -->
+
+    <div class="col-lg-4 mb-4">
+
+        <div class="card shadow border-0 h-100">
+
+            <div class="card-header bg-success text-white">
+
+                <h5 class="mb-0">
+
+                    <i class="fa-solid fa-user-tie me-2"></i>
+
+                    Warden Details
+
+                </h5>
+
+            </div>
+
+            <div class="card-body text-center">
+
+                <img src="../assets/images/warden.png"
+                     class="rounded-circle border border-3 border-success"
+                     width="110">
+
+                <h5 class="mt-3">
+
+                    Dr. Rajesh Sharma
+
+                </h5>
+
+                <p class="text-muted">
+
+                    Hostel Warden
+
+                </p>
+
+                <hr>
+
+                <p>
+
+                    <i class="fa-solid fa-phone text-success me-2"></i>
+
+                    +91 9876543210
+
+                </p>
+
+                <p>
+
+                    <i class="fa-solid fa-envelope text-primary me-2"></i>
+
+                    warden@college.edu
+
+                </p>
+
+                <button class="btn btn-success">
+
+                    Contact Warden
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Hostel Notices -->
+
+    <div class="col-lg-4 mb-4">
+
+        <div class="card shadow border-0 h-100">
+
+            <div class="card-header bg-danger text-white">
+
+                <h5 class="mb-0">
+
+                    <i class="fa-solid fa-bullhorn me-2"></i>
+
+                    Hostel Notices
+
+                </h5>
+
+            </div>
+
+            <div class="card-body">
+
+                <ul class="list-group list-group-flush">
+
+                    <li class="list-group-item">
+
+                        Hostel Gate Timing :
+                        <strong>6 AM - 10 PM</strong>
+
+                    </li>
+
+                    <li class="list-group-item">
+
+                        Carry Student ID while leaving.
+
+                    </li>
+
+                    <li class="list-group-item">
+
+                        QR Pass is mandatory.
+
+                    </li>
+
+                    <li class="list-group-item">
+
+                        Ragging is strictly prohibited.
+
+                    </li>
+
+                    <li class="list-group-item">
+
+                        Hostel Fees Due:
+                        <span class="badge bg-danger">
+
+                            10 Aug
+
+                        </span>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================================================= -->
+<!-- SECOND ROW -->
+<!-- ================================================= -->
+
+<div class="row">
+
+    <!-- Monthly Progress -->
+
+    <div class="col-lg-6 mb-4">
+
+        <div class="card shadow border-0">
+
+            <div class="card-header">
+
+                <h5>
+
+                    Monthly Activity
+
+                </h5>
+
+            </div>
+
+            <div class="card-body">
+
+                <label>
+
+                    Applications Submitted
+
+                </label>
+
+                <div class="progress mb-3">
+
+                    <div class="progress-bar bg-primary"
+                         style="width:75%;">
+
+                        75%
+
+                    </div>
+
+                </div>
+
+                <label>
+
+                    Approved Passes
+
+                </label>
+
+                <div class="progress mb-3">
+
+                    <div class="progress-bar bg-success"
+                         style="width:90%;">
+
+                        90%
+
+                    </div>
+
+                </div>
+
+                <label>
+
+                    Hostel Attendance
+
+                </label>
+
+                <div class="progress">
+
+                    <div class="progress-bar bg-warning"
+                         style="width:82%;">
+
+                        82%
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Quick Actions -->
+
+    <div class="col-lg-6 mb-4">
+
+        <div class="card shadow border-0">
+
+            <div class="card-header">
+
+                <h5>
+
+                    Quick Actions
+
+                </h5>
+
+            </div>
+
+            <div class="card-body">
+
+                <div class="row g-3">
+
+                    <div class="col-md-6">
+
+                        <button class="btn btn-primary w-100 p-3">
+
+                            <i class="fa-solid fa-file-circle-plus fs-4"></i>
+
+                            <br><br>
+
+                            Apply Pass
+
+                        </button>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <button class="btn btn-success w-100 p-3">
+
+                            <i class="fa-solid fa-qrcode fs-4"></i>
+
+                            <br><br>
+
+                            My QR Pass
+
+                        </button>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <button class="btn btn-warning w-100 p-3">
+
+                            <i class="fa-solid fa-clock-rotate-left fs-4"></i>
+
+                            <br><br>
+
+                            Leave History
+
+                        </button>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <button class="btn btn-danger w-100 p-3">
+
+                            <i class="fa-solid fa-phone fs-4"></i>
+
+                            <br><br>
+
+                            Emergency
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================================================= -->
+<!-- DASHBOARD WIDGETS END -->
+<!-- ================================================= -->
+ <!-- =========================================== -->
+<!-- FOOTER START -->
+<!-- =========================================== -->
+
+<footer class="mt-4">
+
+    <div class="card border-0 shadow">
+
+        <div class="card-body">
+
+            <div class="row align-items-center">
+
+                <div class="col-lg-6">
+
+                    <h6 class="mb-0">
+
+                        Hostel Exit Management System
+
+                    </h6>
+
+                    <small class="text-muted">
+
+                        © 2026 All Rights Reserved.
+
+                    </small>
+
+                </div>
+
+                <div class="col-lg-6 text-end">
+
+                    <a href="#" class="text-decoration-none me-4">
+
+                        Privacy Policy
+
+                    </a>
+
+                    <a href="#" class="text-decoration-none me-4">
+
+                        Terms & Conditions
+
+                    </a>
+
+                    <a href="#" class="text-decoration-none">
+
+                        Help
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<!-- =========================================== -->
+<!-- FOOTER END -->
+<!-- =========================================== -->
+ <!-- Notification Modal -->
+
+<div class="modal fade"
+     id="notificationModal">
+
+    <div class="modal-dialog modal-lg">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5>
+
+                    Notifications
+
+                </h5>
+
+                <button class="btn-close"
+                        data-bs-dismiss="modal">
+
+                </button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <div class="alert alert-success">
+
+                    Your gate pass has been approved.
+
+                </div>
+
+                <div class="alert alert-warning">
+
+                    Return before 8 PM.
+
+                </div>
+
+                <div class="alert alert-info">
+
+                    Hostel inspection tomorrow.
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<!-- Profile Modal -->
+
+<div class="modal fade"
+     id="profileModal">
+
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5>
+
+                    Student Profile
+
+                </h5>
+
+                <button class="btn-close"
+                        data-bs-dismiss="modal">
+
+                </button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <div class="text-center">
+
+                    <img src="../assets/images/student.png"
+                        class="rounded-circle"
+                        width="120">
+
+                    <h4 class="mt-3">
+
+                        Aviral Dixit
+
+                    </h4>
+
+                    <p>
+
+                        B.Tech AIML
+
+                    </p>
+
+                </div>
+
+                <table class="table">
+
+                    <tr>
+
+                        <th>Hostel</th>
+
+                        <td>Boys Hostel A</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <th>Room</th>
+
+                        <td>A-204</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <th>Phone</th>
+
+                        <td>9876543210</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <th>Email</th>
+
+                        <td>student@gmail.com</td>
+
+                    </tr>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<!-- Logout Confirmation -->
+
+<div class="modal fade"
+     id="logoutModal">
+
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5>
+
+                    Logout
+
+                </h5>
+
+            </div>
+
+            <div class="modal-body">
+
+                Are you sure you want to logout?
+
+            </div>
+
+            <div class="modal-footer">
+
+                <button class="btn btn-secondary"
+                        data-bs-dismiss="modal">
+
+                    Cancel
+
+                </button>
+
+                <button class="btn btn-danger">
+
+                    Logout
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+</div>
+</div>
+
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Custom JS -->
+<script src="dashboard.js"></script>
+
+
+
+
+</body>
+
+</html>
