@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>
+        Profile | Hostel Exit Management System
+    </title>
+
+
+
+    <!-- Bootstrap CSS -->
+
+    <link 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+
+    <!-- Font Awesome -->
+
+    <link 
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="profilestyle.css">
+
+</head>
+
+
+
+
+<!-- ================= MAIN CONTENT ================= -->
+
+
+<div class="col-md-10">
+
+
+
+<nav class="navbar bg-white shadow-sm p-3">
+
+
+<h3 class="fw-bold mb-0">
+
+    Student Profile
+
+</h3>
+
+
+</nav>
+
+
+
+
+
+
+
+
+<div class="container mt-5">
+
+
+
+
+
+
+<div class="card shadow mx-auto"
+style="max-width:800px;">
+
+
+
+
+
+<div class="card-header bg-primary text-white">
+
+<h5 class="mb-0">
+
+    Profile Information
+
+</h5>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="card-body">
+
+
+
+
+
+<div class="row">
+
+
+
+
+
+
+<!-- PROFILE IMAGE -->
+
+
+<div class="col-md-4 text-center">
+
+
+<img id="profileImage"
+src="IMG-20260211-WA0001.jpg"
+width="150"
+height="150"
+class="rounded-circle mb-3">
+
+
+
+<input type="file"
+id="imageInput"
+class="form-control">
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- DETAILS FORM -->
+
+
+<div class="col-md-8">
+
+
+
+
+
+<label class="form-label">
+
+Name
+
+</label>
+
+
+<input type="text"
+id="name"
+class="form-control mb-3"
+value="Aviral Dixit">
+
+
+
+
+
+
+
+<label class="form-label">
+
+Roll Number
+
+</label>
+
+
+<input type="text"
+id="roll"
+class="form-control mb-3"
+value="AIML2025XXX">
+
+
+
+
+
+
+
+<label class="form-label">
+
+Email
+
+</label>
+
+
+<input type="email"
+id="email"
+class="form-control mb-3"
+value="aviral@gmail.com">
+
+
+
+
+
+
+
+<label class="form-label">
+
+Phone
+
+</label>
+
+
+<input type="text"
+id="phone"
+class="form-control mb-3"
+value="98XXXXXXXX">
+
+
+
+
+
+
+
+<label class="form-label">
+
+Hostel Room
+
+</label>
+
+
+<input type="text"
+id="room"
+class="form-control mb-3"
+value="A-203">
+
+
+
+
+
+
+<button onclick="saveProfile()"
+class="btn btn-success">
+
+<i class="fa-solid fa-save me-2"></i>
+
+Save Changes
+
+</button>
+
+
+
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+<hr>
+
+
+
+
+
+
+
+<!-- DISPLAY PROFILE -->
+
+
+<div class="mt-4">
+
+
+<h5>
+
+Updated Profile
+
+</h5>
+
+
+
+<p>
+
+<b>Name:</b>
+
+<span id="showName">
+Aviral Dixit
+</span>
+
+</p>
+
+
+
+<p>
+
+<b>Roll Number:</b>
+
+<span id="showRoll">
+AIML2025XXX
+</span>
+
+</p>
+
+
+
+<p>
+
+<b>Email:</b>
+
+<span id="showEmail">
+aviral@gmail.com
+</span>
+
+</p>
+
+
+
+<p>
+
+<b>Phone:</b>
+
+<span id="showPhone">
+98XXXXXXXX
+</span>
+
+</p>
+
+
+
+<p>
+
+<b>Room:</b>
+
+<span id="showRoom">
+A-203
+</span>
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<script>
+
+
+function saveProfile(){
+
+
+    document.getElementById("showName").innerHTML =
+    document.getElementById("name").value;
+
+
+
+    document.getElementById("showRoll").innerHTML =
+    document.getElementById("roll").value;
+
+
+
+    document.getElementById("showEmail").innerHTML =
+    document.getElementById("email").value;
+
+
+
+    document.getElementById("showPhone").innerHTML =
+    document.getElementById("phone").value;
+
+
+
+    document.getElementById("showRoom").innerHTML =
+    document.getElementById("room").value;
+
+
+
+    alert("Profile Updated Successfully");
+
+
+}
+
+
+
+
+
+
+// Image Preview
+
+document.getElementById("imageInput")
+.addEventListener("change",function(e){
+
+
+    let reader = new FileReader();
+
+
+    reader.onload=function(){
+
+        document.getElementById("profileImage").src =
+        reader.result;
+
+    }
+
+
+    reader.readAsDataURL(e.target.files[0]);
+
+
+});
+
+
+
+</script>
+
+
+
+
+
+
+<script 
+src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+
+</script>
+
+
+</body>
+
+</html>

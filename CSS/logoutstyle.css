@@ -1,0 +1,684 @@
+/*====================================================
+                GOOGLE FONT
+====================================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/*====================================================
+                    BODY
+====================================================*/
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:linear-gradient(135deg,#EEF2FF,#E0F2FE,#F8FAFC);
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+}
+
+
+
+/*====================================================
+                LOGOUT CARD
+====================================================*/
+
+.card{
+
+    width:450px;
+
+    border:none;
+
+    border-radius:28px;
+
+    background:rgba(255,255,255,.85);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    padding:35px;
+
+    text-align:center;
+
+    overflow:hidden;
+
+    position:relative;
+
+    box-shadow:
+
+        0 20px 45px rgba(0,0,0,.12);
+
+    animation:fadeIn .8s ease;
+
+}
+
+
+
+/*====================================================
+            TOP GRADIENT LINE
+====================================================*/
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:6px;
+
+    background:linear-gradient(
+
+        90deg,
+
+        #4F46E5,
+
+        #7C3AED,
+
+        #06B6D4
+
+    );
+
+}
+
+
+
+/*====================================================
+            FLOATING CIRCLE
+====================================================*/
+
+.card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+
+    height:180px;
+
+    background:rgba(73, 67, 195, 0.871);
+
+    border-radius:50%;
+
+    top:-70px;
+
+    right:-70px;
+
+}
+
+
+
+/*====================================================
+                ICON
+====================================================*/
+
+.fa-right-from-bracket{
+
+    width:100px;
+
+    height:100px;
+
+    background:linear-gradient(
+
+        135deg,
+
+        #df1919,
+
+        #f8a517
+
+    );
+
+    color:#fff;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin:auto;
+
+    font-size:42px !important;
+
+    box-shadow:
+
+        0 15px 35px rgba(209, 37, 37, 0.35);
+
+}
+
+
+
+/*====================================================
+                TITLE
+====================================================*/
+
+h3{
+
+    margin-top:25px;
+
+    font-size:28px;
+
+    font-weight:700;
+
+    color:#1E293B;
+
+}
+
+
+
+/*====================================================
+            DESCRIPTION
+====================================================*/
+
+p{
+
+    margin-top:15px;
+
+    font-size:15px;
+
+    color:#64748B;
+
+    line-height:1.7;
+
+}
+
+
+
+/*====================================================
+                BUTTONS
+====================================================*/
+
+.btn{
+
+    border:none;
+
+    border-radius:14px;
+
+    padding:12px 28px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+
+
+/*====================================================
+            CANCEL BUTTON
+====================================================*/
+
+.btn-secondary{
+
+    background:linear-gradient(
+
+        135deg,
+
+        #64748B,
+
+        #475569
+
+    );
+
+    color:#fff;
+
+}
+
+.btn-secondary:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+
+        0 12px 28px rgba(100,116,139,.35);
+
+}
+
+
+
+/*====================================================
+            LOGOUT BUTTON
+====================================================*/
+
+.btn-danger{
+
+    background:linear-gradient(
+
+        135deg,
+
+        #d53737,
+
+        #f3b42b
+
+    );
+
+    color:#fff;
+
+}
+
+.btn-danger:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+
+        0 12px 30px rgba(239,68,68,.35);
+
+}
+
+
+
+/*====================================================
+            CARD HOVER
+====================================================*/
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    transition:.4s;
+
+}
+
+
+
+/*====================================================
+            PAGE ANIMATION
+====================================================*/
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px) scale(.95);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0) scale(1);
+
+    }
+
+}
+
+
+
+/*====================================================
+            RESPONSIVE
+====================================================*/
+
+@media(max-width:576px){
+
+    .card{
+
+        width:95%;
+
+        padding:25px;
+
+    }
+
+    h3{
+
+        font-size:24px;
+
+    }
+
+    .btn{
+
+        width:100%;
+
+        margin-bottom:12px;
+
+    }
+
+    .d-flex{
+
+        flex-direction:column;
+
+    }
+
+}
+.logo{
+
+    width:90px;
+
+    height:90px;
+
+    object-fit:contain;
+
+    display:block;
+
+    margin:0 auto 20px;
+
+}
+.logo{
+
+    width:90px;
+
+    height:auto;
+
+    object-fit:contain;
+
+}
+/*=========================================
+        SHINING CARD EFFECT
+=========================================*/
+
+.card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border:none;
+
+    border-radius:25px;
+
+    background:#ffffff;
+
+    transition:.4s;
+
+}
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-150%;
+
+    width:60%;
+
+    height:100%;
+
+    background:linear-gradient(
+
+        120deg,
+
+        transparent,
+
+        rgba(255,255,255,.7),
+
+        transparent
+
+    );
+
+    transform:skewX(-25deg);
+
+    animation:shine 3s infinite;
+
+}
+
+@keyframes shine{
+
+    0%{
+
+        left:-150%;
+
+    }
+
+    100%{
+
+        left:170%;
+
+    }
+
+}
+
+
+
+/*=========================================
+        CARD HOVER
+=========================================*/
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:
+
+        0 25px 60px rgba(79,70,229,.25);
+
+}
+
+
+
+/*=========================================
+        ICON
+=========================================*/
+
+.fa-right-from-bracket{
+
+    width:110px;
+
+    height:110px;
+
+    line-height:110px;
+
+    border-radius:50%;
+
+    background:linear-gradient(
+
+        135deg,
+
+        #EF4444,
+
+        #DC2626
+
+    );
+
+    color:#fff !important;
+
+    box-shadow:
+
+        0 15px 35px rgba(239,68,68,.35);
+
+    transition:.4s;
+
+}
+
+.fa-right-from-bracket:hover{
+
+    transform:rotate(-10deg) scale(1.08);
+
+}
+
+
+
+/*=========================================
+        BUTTONS
+=========================================*/
+
+.btn{
+
+    border:none;
+
+    border-radius:14px;
+
+    padding:12px 28px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+
+
+/*=========================================
+        BUTTON SHINE
+=========================================*/
+
+.btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:50%;
+
+    height:100%;
+
+    background:linear-gradient(
+
+        120deg,
+
+        transparent,
+
+        rgba(255,255,255,.45),
+
+        transparent
+
+    );
+
+    transform:skewX(-25deg);
+
+}
+
+.btn:hover::before{
+
+    animation:btnshine .8s;
+
+}
+
+@keyframes btnshine{
+
+    100%{
+
+        left:170%;
+
+    }
+
+}
+
+
+
+/*=========================================
+        LOGOUT BUTTON
+=========================================*/
+
+.btn-danger{
+
+    background:linear-gradient(
+
+        135deg,
+
+        #EF4444,
+
+        #DC2626
+
+    );
+
+}
+
+.btn-danger:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+
+        0 15px 35px rgba(239,68,68,.4);
+
+}
+
+
+
+/*=========================================
+        CANCEL BUTTON
+=========================================*/
+
+.btn-secondary{
+
+    background:linear-gradient(
+
+        135deg,
+
+        #64748B,
+
+        #475569
+
+    );
+
+}
+
+.btn-secondary:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+
+        0 15px 35px rgba(71,85,105,.4);
+
+}
+
+
+
+/*=========================================
+        TITLE
+=========================================*/
+
+h3{
+
+    color:#1E293B;
+
+    font-weight:700;
+
+}
+
+
+
+/*=========================================
+        TEXT
+=========================================*/
+
+p{
+
+    color:#64748B !important;
+
+    line-height:1.7;
+
+}
