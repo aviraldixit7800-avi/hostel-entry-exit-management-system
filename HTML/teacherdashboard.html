@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Approval Dashboard | Hostel Exit Management System
+    </title>
+
+
+
+    <!-- Bootstrap -->
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+
+
+    <!-- Font Awesome -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+
+    <!-- Custom CSS -->
+
+    <link
+        rel="stylesheet"
+        href="teacherdashboard.css">
+
+</head>
+
+<body>
+
+
+
+<!-- ================= MAIN CONTAINER ================= -->
+
+<div class="container-fluid px-3 px-lg-4">
+
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar bg-white shadow-sm rounded-4 px-4 py-3 mt-3 mb-4">
+
+
+
+        <!-- Left -->
+
+        <div>
+
+            <h3 class="fw-bold mb-1">
+
+                Teacher Dashboard
+
+            </h3>
+
+            <p class="text-muted mb-0">
+
+                Hostel Exit Management System
+
+            </p>
+
+        </div>
+
+
+
+        <!-- Right -->
+
+        <div class="d-flex align-items-center gap-3">
+
+            <button class="btn btn-outline-primary">
+
+                <i class="fa-solid fa-bell"></i>
+
+            </button>
+
+            <button class="btn btn-outline-dark">
+
+                <i class="fa-solid fa-user"></i>
+
+            </button>
+
+            <a href="logout.html"
+               class="btn btn-danger">
+
+                <i class="fa-solid fa-right-from-bracket me-2"></i>
+
+                Logout
+
+            </a>
+
+        </div>
+
+    </nav>
+
+
+
+
+
+    <!-- ================= WELCOME CARD ================= -->
+
+    <div class="card shadow-lg border-0 rounded-4 mb-4">
+
+        <div class="card-body p-5">
+
+            <div class="row align-items-center">
+
+                <div class="col-lg-8">
+
+                    <h2 class="fw-bold">
+
+                        Welcome Back 👋
+
+                    </h2>
+
+                    <p class="text-muted mt-3">
+
+                        Manage student gate pass requests,
+                        approve applications,
+                        monitor activities,
+                        and maintain hostel records.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="col-lg-4 text-end">
+
+                    <i class="fa-solid fa-user-shield dashboard-icon"></i>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+    <!-- ================= STATISTICS ================= -->
+
+    <div class="row g-4">
+
+
+
+        <!-- Pending -->
+
+        <div class="col-lg-3 col-md-6">
+
+            <div class="card stats-card shadow">
+
+                <div class="card-body">
+
+                    <div class="d-flex justify-content-between align-items-center">
+
+                        <div>
+
+                            <p class="text-muted">
+
+                                Pending
+
+                            </p>
+
+                            <h2>
+
+                                15
+
+                            </h2>
+
+                        </div>
+
+                        <i class="fa-solid fa-clock stats-icon text-warning"></i>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+
+        <!-- Approved -->
+
+        <div class="col-lg-3 col-md-6">
+
+            <div class="card stats-card shadow">
+
+                <div class="card-body">
+
+                    <div class="d-flex justify-content-between align-items-center">
+
+                        <div>
+
+                            <p class="text-muted">
+
+                                Approved
+
+                            </p>
+
+                            <h2>
+
+                                102
+
+                            </h2>
+
+                        </div>
+
+                        <i class="fa-solid fa-circle-check stats-icon text-success"></i>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+
+        <!-- Rejected -->
+
+        <div class="col-lg-3 col-md-6">
+
+            <div class="card stats-card shadow">
+
+                <div class="card-body">
+
+                    <div class="d-flex justify-content-between align-items-center">
+
+                        <div>
+
+                            <p class="text-muted">
+
+                                Rejected
+
+                            </p>
+
+                            <h2>
+
+                                09
+
+                            </h2>
+
+                        </div>
+
+                        <i class="fa-solid fa-circle-xmark stats-icon text-danger"></i>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+
+        <!-- Total -->
+
+        <div class="col-lg-3 col-md-6">
+
+            <div class="card stats-card shadow">
+
+                <div class="card-body">
+
+                    <div class="d-flex justify-content-between align-items-center">
+
+                        <div>
+
+                            <p class="text-muted">
+
+                                Total Requests
+
+                            </p>
+
+                            <h2>
+
+                                126
+
+                            </h2>
+
+                        </div>
+
+                        <i class="fa-solid fa-file-lines stats-icon text-primary"></i>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+        <!-- ================= PENDING REQUESTS ================= -->
+
+    <div class="card shadow-lg border-0 rounded-4 mt-5">
+
+        <div class="card-header bg-primary text-white py-3">
+
+            <div class="d-flex justify-content-between align-items-center">
+
+                <h4 class="mb-0">
+
+                    Pending Gate Pass Requests
+
+                </h4>
+
+                <span class="badge bg-light text-dark px-3 py-2">
+
+                    15 Pending
+
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="card-body p-0">
+
+            <div class="table-responsive">
+
+                <table class="table table-hover align-middle mb-0">
+
+                    <thead class="table-dark">
+
+                        <tr>
+
+                            <th>Pass ID</th>
+
+                            <th>Student Name</th>
+
+                            <th>Roll Number</th>
+
+                            <th>Purpose</th>
+
+                            <th>Destination</th>
+
+                            <th>Date</th>
+
+                            <th>Status</th>
+
+                            <th>Actions</th>
+
+                        </tr>
+
+                    </thead>
+
+
+
+                    <tbody>
+
+
+
+                        <!-- Request 1 -->
+
+                        <tr>
+
+                            <td>
+
+                                GP1001
+
+                            </td>
+
+                            <td>
+
+                                Aviral Dixit
+
+                            </td>
+
+                            <td>
+
+                                2503491530041
+
+                            </td>
+
+                            <td>
+
+                                Medical
+
+                            </td>
+
+                            <td>
+
+                                City Hospital
+
+                            </td>
+
+                            <td>
+
+                                02 Aug 2026
+
+                            </td>
+
+                            <td>
+
+                                <span class="badge bg-warning">
+
+                                    Pending
+
+                                </span>
+
+                            </td>
+
+                            <td>
+
+                                <div class="btn-group">
+
+                                    <button class="btn btn-primary btn-sm">
+
+                                        <i class="fa-solid fa-eye"></i>
+
+                                    </button>
+
+                                    <button class="btn btn-success btn-sm">
+
+                                        <i class="fa-solid fa-check"></i>
+
+                                    </button>
+
+                                    <button class="btn btn-danger btn-sm">
+
+                                        <i class="fa-solid fa-xmark"></i>
+
+                                    </button>
+
+                                </div>
+
+                            </td>
+
+                        </tr>
+
+
+
+
+
+                        <!-- Request 2 -->
+
+                        <tr>
+
+                            <td>
+
+                                GP1002
+
+                            </td>
+
+                            <td>
+
+                                Anshul Arora
+
+                            </td>
+
+                            <td>
+
+                                2503491530025
+
+                            </td>
+
+                            <td>
+
+                                Home Visit
+
+                            </td>
+
+                            <td>
+
+                                Lucknow
+
+                            </td>
+
+                            <td>
+
+                                03 Aug 2026
+
+                            </td>
+
+                            <td>
+
+                                <span class="badge bg-warning">
+
+                                    Pending
+
+                                </span>
+
+                            </td>
+
+                            <td>
+
+                                <div class="d-flex gap-2">
+
+                                    <button class="btn btn-primary btn-sm">
+
+                                        <i class="fa-solid fa-eye"></i>
+
+                                    </button>
+
+                                    <button class="btn btn-success btn-sm">
+
+                                        <i class="fa-solid fa-check"></i>
+
+                                    </button>
+
+                                    <button class="btn btn-danger btn-sm">
+
+                                        <i class="fa-solid fa-xmark"></i>
+
+                                    </button>
+
+                                </div>
+
+                            </td>
+
+                        </tr>
+
+
+
+
+
+                        <!-- Request 3 -->
+
+                        <tr>
+
+                            <td>
+
+                                GP1003
+
+                            </td>
+
+                            <td>
+
+                                Abhay Trivedi
+
+                            </td>
+
+                            <td>
+
+                                2503491530004
+
+                            </td>
+
+                            <td>
+
+                                Emergency
+
+                            </td>
+
+                            <td>
+
+                                Kanpur
+
+                            </td>
+
+                            <td>
+
+                                03 Aug 2026
+
+                            </td>
+
+                            <td>
+
+                                <span class="badge bg-warning">
+
+                                    Pending
+
+                                </span>
+
+                            </td>
+
+                            <td>
+
+                                <div class="d-flex gap-2">
+
+                                    <button class="btn btn-primary btn-sm">
+
+                                        <i class="fa-solid fa-eye"></i>
+
+                                    </button>
+
+                                    <button class="btn btn-success btn-sm">
+
+                                        <i class="fa-solid fa-check"></i>
+
+                                    </button>
+
+                                    <button class="btn btn-danger btn-sm">
+
+                                        <i class="fa-solid fa-xmark"></i>
+
+                                    </button>
+
+                                </div>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <!-- Request 4 -->
+
+                        <tr>
+
+                            <td>
+
+                                GP1004
+
+                            </td>
+
+                            <td>
+
+                                Aditya Sahu
+
+                            </td>
+
+                            <td>
+
+                                2503491530011
+
+                            </td>
+
+                            <td>
+
+                                Competition
+
+                            </td>
+
+                            <td>
+
+                                IIT Kanpur
+
+                            </td>
+
+                            <td>
+
+                                04 Aug 2026
+
+                            </td>
+
+                            <td>
+
+                                <span class="badge bg-warning">
+
+                                    Pending
+
+                                </span>
+
+                            </td>
+
+                            <td>
+
+                                <div class="d-flex gap-2">
+
+                                    <button class="btn btn-primary btn-sm">
+
+                                        <i class="fa-solid fa-eye"></i>
+
+                                    </button>
+
+                                    <button class="btn btn-success btn-sm">
+
+                                        <i class="fa-solid fa-check"></i>
+
+                                    </button>
+
+                                    <button class="btn btn-danger btn-sm">
+
+                                        <i class="fa-solid fa-xmark"></i>
+
+                                    </button>
+
+                                </div>
+
+                            </td>
+
+                        </tr>
+
+
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+    <!-- ================= QUICK ACTIONS ================= -->
+
+<div class="row g-4 mt-2">
+
+
+    <!-- Quick Actions -->
+
+    <div class="col-lg-4">
+
+        <div class="card shadow-lg border-0 rounded-4 h-100">
+
+            <div class="card-header bg-dark text-white py-3 rounded-top-4">
+
+                <h5 class="mb-0">
+
+                    <i class="fa-solid fa-bolt me-2"></i>
+
+                    Quick Actions
+
+                </h5>
+
+            </div>
+
+            <div class="card-body">
+
+                <div class="d-grid gap-3">
+
+                    <a href="pending.html"
+                       class="btn btn-outline-primary">
+
+                        <i class="fa-solid fa-clock me-2"></i>
+
+                        Pending Requests
+
+                    </a>
+
+                    <a href="approved.html"
+                       class="btn btn-outline-success">
+
+                        <i class="fa-solid fa-circle-check me-2"></i>
+
+                        Approved Requests
+
+                    </a>
+
+                    <a href="rejected.html"
+                       class="btn btn-outline-danger">
+
+                        <i class="fa-solid fa-circle-xmark me-2"></i>
+
+                        Rejected Requests
+
+                    </a>
+
+                    <a href="students.html"
+                       class="btn btn-outline-info">
+
+                        <i class="fa-solid fa-users me-2"></i>
+
+                        Student Records
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+    <!-- Recent Activity -->
+
+    <div class="col-lg-4">
+
+        <div class="card shadow-lg border-0 rounded-4 h-100">
+
+            <div class="card-header bg-success text-white py-3 rounded-top-4">
+
+                <h5 class="mb-0">
+
+                    <i class="fa-solid fa-clock-rotate-left me-2"></i>
+
+                    Recent Activity
+
+                </h5>
+
+            </div>
+
+            <div class="card-body">
+
+                <ul class="list-group list-group-flush">
+
+                    <li class="list-group-item">
+
+                        ✅ Approved GP1001
+
+                        <small class="text-muted d-block">
+
+                            5 Minutes Ago
+
+                        </small>
+
+                    </li>
+
+                    <li class="list-group-item">
+
+                        ❌ Rejected GP1004
+
+                        <small class="text-muted d-block">
+
+                            15 Minutes Ago
+
+                        </small>
+
+                    </li>
+
+                    <li class="list-group-item">
+
+                        📝 New Application GP1008
+
+                        <small class="text-muted d-block">
+
+                            30 Minutes Ago
+
+                        </small>
+
+                    </li>
+
+                    <li class="list-group-item">
+
+                        🚪 Student Returned
+
+                        <small class="text-muted d-block">
+
+                            1 Hour Ago
+
+                        </small>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+    <!-- Notifications -->
+
+    <div class="col-lg-4">
+
+        <div class="card shadow-lg border-0 rounded-4 h-100">
+
+            <div class="card-header bg-warning py-3 rounded-top-4">
+
+                <h5 class="mb-0 text-dark">
+
+                    <i class="fa-solid fa-bell me-2"></i>
+
+                    Notifications
+
+                </h5>
+
+            </div>
+
+            <div class="card-body">
+
+                <div class="alert alert-warning">
+
+                    15 Requests Waiting
+
+                </div>
+
+                <div class="alert alert-success">
+
+                    102 Applications Approved
+
+                </div>
+
+                <div class="alert alert-info">
+
+                    Security Updated Entry Logs
+
+                </div>
+
+                <div class="alert alert-danger">
+
+                    4 Applications Rejected
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+<!-- ================= TODAY'S SUMMARY ================= -->
+
+<div class="card shadow-lg border-0 rounded-4 mt-5">
+
+    <div class="card-header bg-primary text-white py-3 rounded-top-4">
+
+        <h5 class="mb-0">
+
+            Today's Summary
+
+        </h5>
+
+    </div>
+
+    <div class="card-body">
+
+        <div class="row text-center">
+
+            <div class="col-md-3">
+
+                <h1 class="text-primary">
+
+                    18
+
+                </h1>
+
+                <p>
+
+                    Total Requests
+
+                </p>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <h1 class="text-success">
+
+                    12
+
+                </h1>
+
+                <p>
+
+                    Approved
+
+                </p>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <h1 class="text-danger">
+
+                    2
+
+                </h1>
+
+                <p>
+
+                    Rejected
+
+                </p>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <h1 class="text-warning">
+
+                    4
+
+                </h1>
+
+                <p>
+
+                    Pending
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="text-center mt-5 mb-4">
+
+    <hr>
+
+    <p class="text-muted mb-0">
+
+        © 2026 Hostel Exit Management System
+
+    </p>
+
+    <small class="text-muted">
+
+        Developed by Team Astitva • Aviral • Anshul
+
+    </small>
+
+</footer>
+
+
+
+
+
+</div>
+
+<!-- End Container -->
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
